@@ -83,7 +83,7 @@
     <header>
       <div class="app-name">Poopie Mate (응가메이트)</div>
       <h1>Privacy Policy</h1>
-      <div class="date">Effective Date: June 19, 2026</div>
+      <div class="date">Effective Date: October 6, 2026</div>
     </header>
 
     <section>
@@ -97,8 +97,9 @@
         <li><strong>Social login information</strong> — Email address, user ID, display name, and profile photo from your Google, Apple, or Kakao account (limited to what is provided at the time of login)</li>
         <li><strong>Pet information</strong> — Your dog's name, photo, size, age, body condition, coat type, and health information</li>
         <li><strong>Potty records</strong> — Timestamps and status of poop and pee logs, and walk records</li>
-        <li><strong>Location information</strong> — Current location coordinates for walk weather checks and weather-based alerts (only if you grant permission)</li>
+        <li><strong>Location information</strong> — Current location coordinates and neighborhood name for walk weather checks, weather-based alerts, and showing where potty and walk records happened (only if you grant permission)</li>
         <li><strong>Device or app identifiers</strong> — Device or app identifiers such as Expo Push Tokens for push notifications</li>
+        <li><strong>App usage data</strong> — App usage events such as screen views, button taps, and time spent, along with device model, operating system, and app version</li>
         <li><strong>Service settings</strong> — Language, notification settings, preferred walk windows, potty goals, and other app settings</li>
       </ul>
     </section>
@@ -110,6 +111,8 @@
         <li>To retrieve weather data for walk safety assessments</li>
         <li>To send personalized push notifications for potty timing and walk schedules</li>
         <li>To create accounts, authenticate users, manage family invitations, and provide account management</li>
+        <li>To tag potty and walk records with a place (neighborhood name) shared with your family</li>
+        <li>To analyze usage statistics and improve features</li>
         <li>To improve service quality, respond to errors, prevent misuse, and comply with legal obligations</li>
       </ul>
     </section>
@@ -137,7 +140,9 @@
         <li><strong>Expo (Expo Go / EAS)</strong> — App builds and push notifications</li>
         <li><strong>Google LLC</strong> — Firebase Cloud Messaging (push notifications)</li>
         <li><strong>Google LLC, Apple Inc., Kakao Corp.</strong> — Social login authentication</li>
-        <li><strong>Open-Meteo</strong> — Weather forecast lookup based on location coordinates</li>
+        <li><strong>Open-Meteo</strong> — Weather and air quality lookup based on location coordinates</li>
+        <li><strong>Apple Inc., Google LLC</strong> — Converting location coordinates to a neighborhood name (the device operating system's geocoding)</li>
+        <li><strong>PostHog Inc.</strong> — App usage analytics (user identifier and app usage events)</li>
       </ul>
     </section>
 
@@ -167,7 +172,7 @@
     <section>
       <h2>8. Location Information</h2>
       <div class="highlight">
-        <p>Location information is used to check walk weather, calculate walk safety, and provide weather-based alerts. If you grant location permission, your current location coordinates may be sent to a weather lookup API and may be stored in our service database to provide server-based alerts. You can still use core features such as potty logging and family sharing without granting location permission.</p>
+        <p>Location information is used to check walk weather, calculate walk safety, provide weather-based alerts, and show where potty and walk records happened. If you grant location permission, your current location coordinates may be sent to a weather lookup API and may be stored in our service database to provide server-based alerts. When you log a potty break or walk for the current time, the location coordinates and neighborhood name are saved with that record, and family members caring for the same dog can see the neighborhood name on the record. Location is only checked while you are using the app and is never collected in the background. You can still use core features such as potty logging and family sharing without granting location permission.</p>
       </div>
     </section>
 
@@ -186,7 +191,7 @@
     </section>
 
     <footer>
-      <p>© 2026 Pixelberry · <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a></p>
+      <p>© 2026 Pixelberry · <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a> · <a href="./licenses-en">Open source licenses</a></p>
     </footer>
   </div>
 </body>

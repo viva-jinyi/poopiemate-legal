@@ -83,7 +83,7 @@
     <header>
       <div class="app-name">응가메이트 (Poopie Mate)</div>
       <h1>개인정보 처리방침</h1>
-      <div class="date">시행일: 2026년 6월 19일</div>
+      <div class="date">시행일: 2026년 10월 6일</div>
     </header>
 
     <section>
@@ -97,8 +97,9 @@
         <li><strong>소셜 로그인 정보</strong> — Google, Apple, 카카오 계정의 이메일, 사용자 ID, 닉네임, 프로필 사진 (로그인 시 제공되는 항목에 한함)</li>
         <li><strong>반려견 정보</strong> — 이름, 사진, 크기, 나이, 체형, 털 타입, 건강 정보</li>
         <li><strong>배변 기록</strong> — 응가·쉬야 기록 시각, 상태, 산책 기록</li>
-        <li><strong>위치 정보</strong> — 산책 날씨 확인 및 날씨 기반 알림 제공을 위한 현재 위치 좌표 (사용자 허용 시)</li>
+        <li><strong>위치 정보</strong> — 산책 날씨 확인, 날씨 기반 알림, 배변·산책 기록의 장소 표시를 위한 현재 위치 좌표와 동네 이름 (사용자 허용 시)</li>
         <li><strong>기기 또는 앱 식별자</strong> — 푸시 알림 제공을 위한 Expo Push Token 등 기기 또는 앱 식별자</li>
+        <li><strong>앱 이용 기록</strong> — 화면 이동, 버튼 사용, 체류 시간 등 앱 이용 이벤트와 기기 모델, 운영체제, 앱 버전</li>
         <li><strong>서비스 설정 정보</strong> — 언어, 알림 설정, 산책 가능 시간, 배변 목표 등 앱 사용 설정</li>
       </ul>
     </section>
@@ -110,6 +111,8 @@
         <li>산책 안전도 계산을 위한 날씨 정보 조회</li>
         <li>배변 타이밍·산책 시간 맞춤 푸시 알림 발송</li>
         <li>계정 생성, 로그인, 가족 초대 및 계정 관리</li>
+        <li>배변·산책 기록에 장소(동네 이름)를 남겨 가족과 공유</li>
+        <li>서비스 이용 통계 분석을 통한 기능 개선</li>
         <li>서비스 품질 개선, 오류 대응, 부정 이용 방지 및 법령 준수</li>
       </ul>
     </section>
@@ -137,7 +140,9 @@
         <li><strong>Expo (Expo Go / EAS)</strong> — 앱 빌드 및 푸시 알림</li>
         <li><strong>Google LLC</strong> — Firebase Cloud Messaging (푸시 알림)</li>
         <li><strong>Google LLC, Apple Inc., Kakao Corp.</strong> — 소셜 로그인 인증</li>
-        <li><strong>Open-Meteo</strong> — 위치 좌표 기반 날씨 예보 조회</li>
+        <li><strong>Open-Meteo</strong> — 위치 좌표 기반 날씨·미세먼지 조회</li>
+        <li><strong>Apple Inc., Google LLC</strong> — 위치 좌표를 동네 이름으로 변환 (기기 운영체제의 위치 변환 기능)</li>
+        <li><strong>PostHog Inc.</strong> — 앱 이용 통계 분석 (사용자 식별자와 앱 이용 이벤트)</li>
       </ul>
     </section>
 
@@ -167,7 +172,7 @@
     <section>
       <h2>8. 위치 정보 수집</h2>
       <div class="highlight">
-        <p>위치 정보는 산책 날씨 확인, 산책 안전도 계산, 날씨 기반 알림 제공 목적으로 사용됩니다. 사용자가 위치 권한을 허용한 경우 현재 위치 좌표가 날씨 조회 API로 전송될 수 있으며, 서버 기반 알림 제공을 위해 서비스 데이터베이스에 저장될 수 있습니다. 위치 권한을 허용하지 않아도 배변 기록, 가족 공유 등 핵심 기능은 이용할 수 있습니다.</p>
+        <p>위치 정보는 산책 날씨 확인, 산책 안전도 계산, 날씨 기반 알림 제공, 배변·산책 기록의 장소 표시 목적으로 사용됩니다. 사용자가 위치 권한을 허용한 경우 현재 위치 좌표가 날씨 조회 API로 전송될 수 있으며, 서버 기반 알림 제공을 위해 서비스 데이터베이스에 저장될 수 있습니다. 또한 현재 시각으로 배변·산책을 기록하면 위치 좌표와 동네 이름이 해당 기록과 함께 저장되며, 같은 반려견을 함께 돌보는 가족 구성원이 기록에서 동네 이름을 볼 수 있습니다. 위치는 앱을 사용하는 동안에만 확인하며, 백그라운드에서 수집하지 않습니다. 위치 권한을 허용하지 않아도 배변 기록, 가족 공유 등 핵심 기능은 이용할 수 있습니다.</p>
       </div>
     </section>
 
@@ -186,7 +191,7 @@
     </section>
 
     <footer>
-      <p>© 2026 픽셀베리 · <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a></p>
+      <p>© 2026 픽셀베리 · <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a> · <a href="./licenses-ko">오픈소스 라이선스</a></p>
     </footer>
   </div>
 </body>
