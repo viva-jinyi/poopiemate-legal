@@ -1,109 +1,94 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>오픈소스 라이선스 — 응가메이트</title>
-  <link rel="icon" href="https://poopiemate.com/favicon.ico" sizes="48x48">
-  <meta name="theme-color" content="#18955A">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <title>Open Source Licenses — PoopieMate</title>
   <style>
-@font-face{font-family:"NanumSquareNeo";src:url("https://poopiemate.com/assets/fonts/NanumSquareNeo-cBd.woff2") format("woff2");font-weight:700 900;font-display:swap}
-:root{--brand:#18955A;--brand-deep:#0E7041;--brand-subtle:#E5F8F0;--on-color:#FFFFFF;--fg:#191F28;--fg-2:#4E5968;--fg-3:#6B7684;--fg-4:#8B95A1;--line:#E5E8EB;--surface:#F2F4F6;--surface-soft:#F9FAFB}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#FFFFFF;color:var(--fg);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
-a{color:var(--brand-deep)}
-:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
-.bar{position:sticky;top:0;z-index:5;height:64px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);color:var(--fg)}
-.bar-in{max-width:1120px;height:100%;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.bar img{height:24px;width:auto;display:block}
-.bar nav{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:700}
-.bar nav a{color:var(--fg-3);text-decoration:none}
-.bar nav a[aria-current="true"]{color:var(--fg)}
-.bar .home{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:var(--fg);color:var(--on-color)}
-.container{max-width:760px;margin:0 auto;padding:clamp(40px,6vw,72px) 20px 40px}
-header{margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.app-name{font-size:15px;font-weight:700;color:#127F4A}
-.lang-switch{display:none}
-h1,h2,h3,.contact-card .value{font-family:"NanumSquareNeo","Pretendard Variable",Pretendard,sans-serif}
-h1{margin:10px 0 0;font-size:clamp(26px,3.4vw,36px);line-height:1.32;font-weight:700;letter-spacing:-.025em}
-.date,.subtitle{margin:12px 0 0;font-size:15px;color:var(--fg-3)}
-section{margin-bottom:36px}
-h2{margin:0 0 12px;font-size:clamp(18px,1.8vw,20px);line-height:1.45;font-weight:700;letter-spacing:-.015em}
-h3{margin:0 0 4px;font-size:16px;font-weight:700}
-p{margin:0 0 10px;font-size:16px;color:var(--fg-2)}
-ul,ol{margin:0 0 10px;padding-left:20px}
-li{margin:6px 0;font-size:16px;color:var(--fg-2)}
-strong{color:var(--fg)}
-.highlight{padding:16px 20px;border-radius:16px;background:var(--brand-subtle)}
-.highlight p{margin:0}
-.contact-card{margin:0 0 12px;padding:18px 20px;border-radius:16px;background:var(--surface-soft)}
-.contact-card .label{font-size:13px;font-weight:700;color:var(--fg-2)}
-.contact-card .value{margin-top:4px;font-size:17px;font-weight:700}
-.item{margin-bottom:20px}
-.item p{margin-bottom:2px;font-size:15px}
-.meta{color:var(--fg-3)}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg-2)}
-th{font-weight:700;color:var(--fg);white-space:nowrap}
-td:nth-child(2){white-space:nowrap}
-td:first-child{word-break:break-all}
-details{margin-bottom:12px;border-radius:14px;background:var(--surface-soft)}
-summary{cursor:pointer;padding:14px 18px;font-size:15px;font-weight:700}
-.used-by{padding:0 18px;font-size:13px;color:var(--fg-3)}
-pre{margin:0;padding:12px 18px 18px;font-size:12px;line-height:1.6;white-space:pre-wrap;word-break:break-word;color:var(--fg-2)}
-.feather{background:none;margin:2px 0 0}
-.feather summary{padding:0;font-size:13px;font-weight:400;color:var(--fg-3)}
-.feather p{font-size:13px;color:var(--fg-3);margin:4px 0 0}
-@media (max-width:600px){thead{display:none}table,tbody,tr,td{display:block;width:100%}tr{padding:10px 0;border-bottom:1px solid var(--line)}td{border:0;padding:0}td:nth-child(2){display:inline;font-size:12px}td:nth-child(3){font-size:12px;color:var(--fg-3)}td:first-child a{display:inline-block;padding:4px 0;min-height:24px}}
-.foot{margin-top:24px;padding:40px 20px 48px;background:var(--surface-soft);font-size:13px;color:var(--fg-2)}
-.foot-in{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
-.foot a{color:var(--fg-2);text-decoration:none}
-.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f9fafb;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 48px 24px 80px; }
+    header { margin-bottom: 40px; padding-bottom: 24px; border-bottom: 1px solid #e5e7eb; }
+    .app-name { font-size: 14px; font-weight: 600; color: #1a9058; margin-bottom: 8px; letter-spacing: 0.05em; }
+    h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .date { font-size: 14px; color: #6b7280; }
+    .lang-switch { float: right; font-size: 14px; }
+    section { margin-bottom: 36px; }
+    h2 { font-size: 18px; font-weight: 700; margin-bottom: 12px; color: #111827; }
+    h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: #111827; }
+    p { font-size: 15px; color: #374151; margin-bottom: 10px; }
+    .item { margin-bottom: 20px; }
+    .item p { margin-bottom: 2px; font-size: 14px; }
+    .meta { color: #6b7280; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid #e5e7eb; vertical-align: top; color: #374151; }
+    th { font-weight: 700; color: #111827; white-space: nowrap; }
+    td:nth-child(2) { white-space: nowrap; }
+    td:first-child { word-break: break-all; }
+    .feather summary { padding: 0; font-size: 13px; font-weight: 400; color: #6b7280; }
+    .feather { border: 0; background: none; margin: 2px 0 0; }
+    .feather p { font-size: 13px; color: #6b7280; margin: 4px 0 0; }
+    @media (max-width: 600px) {
+      thead { display: none; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      tr { padding: 10px 0; border-bottom: 1px solid #e5e7eb; }
+      td { border: 0; padding: 0; }
+      td:nth-child(2) { display: inline; font-size: 12px; }
+      td:nth-child(3) { font-size: 12px; color: #6b7280; }
+    }
+    details { margin-bottom: 12px; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff; }
+    summary { cursor: pointer; padding: 12px 16px; font-size: 15px; font-weight: 700; }
+    .used-by { padding: 0 16px; font-size: 13px; color: #6b7280; }
+    pre { padding: 12px 16px 16px; font-size: 12px; line-height: 1.6; white-space: pre-wrap; word-break: break-word; color: #374151; }
+    footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #e5e7eb; font-size: 13px; color: #9ca3af; }
+    a { color: #1a9058; }
   </style>
 </head>
 <body>
-<div class="bar" role="banner"><div class="bar-in"><a href="https://poopiemate.com/"><img src="https://poopiemate.com/assets/brand/wordmark-ko-green.svg" alt="응가메이트" width="120" height="32"></a><nav aria-label="언어"><a href="./licenses-ko" lang="ko" hreflang="ko" aria-current="true">KO</a><a href="./licenses-en" lang="en" hreflang="en">EN</a><a class="home" href="https://poopiemate.com/">홈페이지</a></nav></div></div>
-<main class="container">
+  <div class="container">
     <header>
-      <a class="lang-switch" href="./licenses-en">English</a>
+      <a class="lang-switch" href="./licenses-ko">한국어</a>
       <div class="app-name">응가메이트 (PoopieMate)</div>
-      <h1>오픈소스 라이선스</h1>
-      <div class="date">최종 업데이트: 2026년 10월 6일</div>
+      <h1>Open Source Licenses</h1>
+      <div class="date">Last updated: October 6, 2026</div>
     </header>
 
     <section>
-      <p>응가메이트 앱에는 아래 오픈소스 소프트웨어와 디자인 리소스가 포함되어 있습니다. 각 저작권자와 기여자께 감사드립니다. 각 항목은 표기된 라이선스 조건에 따라 사용되며, 라이선스 전문은 이 페이지 하단에 있습니다.</p>
+      <p>The PoopieMate app includes the open source software and design resources listed below. We thank all copyright holders and contributors. Each item is used under the license shown, and the full license texts are at the bottom of this page.</p>
     </section>
 
     <section>
-      <h2>디자인 리소스</h2>
+      <h2>Design resources</h2>
       <div class="item">
         <h3><a href="https://github.com/microsoft/fluentui-emoji">Fluent Emoji (3D)</a></h3>
-        <p>앱 곳곳의 3D 아이콘(이모지 이미지)에 사용합니다.</p>
+        <p>3D icons (emoji images) used throughout the app.</p>
         <p class="meta">Copyright (c) Microsoft Corporation. · <a href="#license-mit">MIT License</a></p>
       </div>
       <div class="item">
         <h3><a href="https://lucide.dev">Lucide Icons</a></h3>
-        <p>앱의 선형 아이콘에 사용합니다.</p>
+        <p>Line icons used throughout the app.</p>
         <p class="meta">Copyright (c) 2026 Lucide Icons and Contributors · <a href="#license-isc">ISC License</a></p>
-        <p class="meta">일부 아이콘은 Feather 프로젝트에서 파생되었으며 MIT 라이선스를 따릅니다 — Copyright (c) 2013-present Cole Bemis · <a href="#license-mit">MIT License</a></p>
-        <details class="feather"><summary>Feather에서 파생된 아이콘 목록 보기</summary><p>airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out</p></details>
+        <p class="meta">Some icons are derived from the Feather project and are licensed under the MIT License — Copyright (c) 2013-present Cole Bemis · <a href="#license-mit">MIT License</a></p>
+        <details class="feather"><summary>Show icons derived from Feather</summary><p>airplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out</p></details>
       </div>
       <div class="item">
         <h3><a href="https://hangeul.naver.com/font">NanumSquare Neo (나눔스퀘어 네오)</a></h3>
-        <p>앱 본문 글꼴로 사용합니다. 나눔스퀘어 네오는 NAVER Corp.의 등록 상표입니다.</p>
+        <p>The app’s body typeface. NanumSquare Neo is a registered trademark of NAVER Corp.</p>
         <p class="meta">Copyright © 2022 NAVER Corp. Font designed by Sandoll Inc. · <a href="#license-ofl-1-1">SIL Open Font License 1.1</a></p>
       </div>
     </section>
 
     <section>
-      <h2>소프트웨어 라이브러리</h2>
+      <h2>Software libraries</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>이름</th><th>라이선스</th><th>저작권</th></tr></thead>
+          <thead><tr><th>Name</th><th>License</th><th>Copyright</th></tr></thead>
           <tbody>
           <tr><td><a href="https://github.com/react-native-async-storage/async-storage">@react-native-async-storage/async-storage</a></td><td><a href="#license-mit">MIT</a></td><td>Copyright (c) 2015-present, Facebook, Inc.</td></tr>
           <tr><td><a href="https://github.com/react-native-datetimepicker/datetimepicker">@react-native-community/datetimepicker</a></td><td><a href="#license-mit">MIT</a></td><td>Copyright (c) 2019 React Native Community</td></tr>
@@ -169,12 +154,12 @@ pre{margin:0;padding:12px 18px 18px;font-size:12px;line-height:1.6;white-space:p
     </section>
 
     <section>
-      <h2>라이선스 전문</h2>
-      <p>아래 라이선스 전문은 원문(영어) 그대로 싣습니다. 각 항목의 저작권 표시는 위 목록을 따릅니다.</p>
+      <h2>Full license texts</h2>
+      <p>The license texts below are reproduced verbatim. Copyright notices for each item are listed above.</p>
 
       <details id="license-mit">
         <summary>MIT License</summary>
-        <p class="used-by"><strong>적용 대상</strong>: Fluent Emoji (3D), Feather (Lucide), @react-native-async-storage/async-storage, @react-native-community/datetimepicker, @react-native-kakao/core, @react-native-kakao/share, @react-native-kakao/social, @react-native-kakao/user, @react-navigation/bottom-tabs, @react-navigation/native, @react-navigation/native-stack, @rn-primitives/switch, @supabase/supabase-js, base64-arraybuffer, clsx, expo, expo-apple-authentication, expo-application, expo-auth-session, expo-blur, expo-clipboard, expo-constants, expo-dev-client, expo-device, expo-file-system, expo-font, expo-haptics, expo-image-picker, expo-linear-gradient, expo-localization, expo-location, expo-navigation-bar, expo-notifications, expo-splash-screen, expo-sqlite, expo-status-bar, expo-system-ui, expo-updates, expo-web-browser, i18next, nativewind, posthog-react-native, react, react-i18next, react-native, react-native-gesture-handler, react-native-keyboard-controller, react-native-reanimated, react-native-safe-area-context, react-native-screens, react-native-svg, react-native-url-polyfill, react-native-worklets, tailwind-merge, tailwindcss, tailwindcss-animate, zustand</p>
+        <p class="used-by"><strong>Applies to</strong>: Fluent Emoji (3D), Feather (Lucide), @react-native-async-storage/async-storage, @react-native-community/datetimepicker, @react-native-kakao/core, @react-native-kakao/share, @react-native-kakao/social, @react-native-kakao/user, @react-navigation/bottom-tabs, @react-navigation/native, @react-navigation/native-stack, @rn-primitives/switch, @supabase/supabase-js, base64-arraybuffer, clsx, expo, expo-apple-authentication, expo-application, expo-auth-session, expo-blur, expo-clipboard, expo-constants, expo-dev-client, expo-device, expo-file-system, expo-font, expo-haptics, expo-image-picker, expo-linear-gradient, expo-localization, expo-location, expo-navigation-bar, expo-notifications, expo-splash-screen, expo-sqlite, expo-status-bar, expo-system-ui, expo-updates, expo-web-browser, i18next, nativewind, posthog-react-native, react, react-i18next, react-native, react-native-gesture-handler, react-native-keyboard-controller, react-native-reanimated, react-native-safe-area-context, react-native-screens, react-native-svg, react-native-url-polyfill, react-native-worklets, tailwind-merge, tailwindcss, tailwindcss-animate, zustand</p>
         <pre>Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -199,7 +184,7 @@ SOFTWARE
 
       <details id="license-isc">
         <summary>ISC License</summary>
-        <p class="used-by"><strong>적용 대상</strong>: Lucide Icons, lucide-react-native</p>
+        <p class="used-by"><strong>Applies to</strong>: Lucide Icons, lucide-react-native</p>
         <pre>Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
 copyright notice and this permission notice appear in all copies.
@@ -215,7 +200,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</pre>
 
       <details id="license-apache-2-0">
         <summary>Apache License 2.0</summary>
-        <p class="used-by"><strong>적용 대상</strong>: Firebase Cloud Messaging (Android), Kakao SDK (iOS / Android)</p>
+        <p class="used-by"><strong>Applies to</strong>: Firebase Cloud Messaging (Android), Kakao SDK (iOS / Android)</p>
         <pre>Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -396,7 +381,7 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.</pre>
 
       <details id="license-ofl-1-1">
         <summary>SIL Open Font License 1.1</summary>
-        <p class="used-by"><strong>적용 대상</strong>: NanumSquare Neo</p>
+        <p class="used-by"><strong>Applies to</strong>: NanumSquare Neo</p>
         <pre>-----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007
 -----------------------------------------------------------
@@ -485,9 +470,13 @@ FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM
 OTHER DEALINGS IN THE FONT SOFTWARE.</pre>
       </details>
     </section>
-  </main>
-<footer class="foot"><div class="foot-in"><nav><a href="./privacy-ko">개인정보 처리방침</a><a href="./terms-ko">이용약관</a><a href="./support-ko">고객 지원</a><a href="./licenses-ko">오픈소스 라이선스</a></nav><nav aria-label="SNS"><a href="https://www.youtube.com/@poopiemate" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@poopiemate" rel="noopener">TikTok</a><a href="https://www.instagram.com/poopiemate_kr" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/poopiemate" rel="noopener">LinkedIn</a></nav><span>© 2026 픽셀베리 · 응가메이트 · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></span></div></footer>
-<script>
+
+    <footer>
+      <p>Questions about licenses: <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a></p>
+      <p>© 2026 Pixelberry</p>
+    </footer>
+  </div>
+  <script>
     // 라이선스 링크를 누르면 접힌 전문을 펼친다
     function openTarget() {
       var el = location.hash && document.getElementById(location.hash.slice(1));

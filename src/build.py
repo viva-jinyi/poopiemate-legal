@@ -1,14 +1,17 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="oEAxzB4_-2KNdoVlcscwl2uHO2Q2wCMpML6ZJnScCV8" />
-  <title>고객 지원 — 응가메이트</title>
-  <link rel="icon" href="https://poopiemate.com/favicon.ico" sizes="48x48">
-  <meta name="theme-color" content="#18955A">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <style>
+"""정책 페이지 — 원본(src/pages)의 본문은 그대로 두고 응가메이트 웹 디자인(초록 헤더·토큰 색·나눔스퀘어 네오)으로 다시 감싼다.
+주소(privacy-ko, terms-en …)는 앱·스토어가 링크하므로 바꾸지 않는다.
+
+python3 src/build.py
+"""
+import re
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+WEB = 'https://poopiemate.com'
+PAIR = {'privacy': '개인정보 처리방침', 'terms': '이용약관', 'support': '고객 지원', 'licenses': '오픈소스 라이선스'}
+PAIR_EN = {'privacy': 'Privacy Policy', 'terms': 'Terms of Service', 'support': 'Support', 'licenses': 'Open-source licenses'}
+
+CSS = '''
 @font-face{font-family:"NanumSquareNeo";src:url("https://poopiemate.com/assets/fonts/NanumSquareNeo-cBd.woff2") format("woff2");font-weight:700 900;font-display:swap}
 :root{--brand:#18955A;--brand-deep:#0E7041;--brand-subtle:#E5F8F0;--on-color:#FFFFFF;--fg:#191F28;--fg-2:#4E5968;--fg-3:#6B7684;--fg-4:#8B95A1;--line:#E5E8EB;--surface:#F2F4F6;--surface-soft:#F9FAFB}
 *,*::before,*::after{box-sizing:border-box}
@@ -63,44 +66,35 @@ pre{margin:0;padding:12px 18px 18px;font-size:12px;line-height:1.6;white-space:p
 .foot-in{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
 .foot a{color:var(--fg-2);text-decoration:none}
 .foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
-  </style>
-</head>
-<body>
-<div class="bar" role="banner"><div class="bar-in"><a href="https://poopiemate.com/"><img src="https://poopiemate.com/assets/brand/wordmark-ko-green.svg" alt="응가메이트" width="120" height="32"></a><nav aria-label="언어"><a href="./support-ko" lang="ko" hreflang="ko" aria-current="true">KO</a><a href="./support-en" lang="en" hreflang="en">EN</a><a class="home" href="https://poopiemate.com/">홈페이지</a></nav></div></div>
-<main class="container">
-    <header>
-      <div class="app-name">응가메이트 (PoopieMate)</div>
-      <h1>고객 지원</h1>
-      <p class="subtitle">문의사항이 있으시면 아래로 연락해 주세요.</p>
-    </header>
+'''
 
-    <section>
-      <h2>문의하기</h2>
-      <div class="contact-card">
-        <div class="label">이메일</div>
-        <div class="value"><a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a></div>
-      </div>
-      <p>이메일로 문의 주시면 영업일 기준 1~2일 이내에 답변 드립니다.</p>
-    </section>
 
-    <section>
-      <h2>자주 묻는 질문</h2>
-      <ul>
-        <li><strong>가족 공유는 어떻게 하나요?</strong><br>마이 탭 → 가족 초대 코드로 공유할 수 있습니다.</li>
-        <li><strong>푸시 알림이 오지 않아요.</strong><br>iPhone 설정 → 응가메이트 → 알림 허용 여부를 확인해 주세요.</li>
-        <li><strong>날씨 산책 안전도가 표시되지 않아요.</strong><br>설정에서 위치 접근 권한이 허용되어 있는지 확인해 주세요.</li>
-        <li><strong>계정이나 데이터를 삭제하고 싶어요.</strong><br>앱 내 설정 → 계정 설정 → 탈퇴 기능을 이용하시거나 이메일로 요청해 주세요.</li>
-      </ul>
-    </section>
+def build(name):
+    src = (ROOT / 'src/pages' / name).read_text(encoding='utf-8')
+    lang = 'en' if re.search(r'<html lang="en"', src) else 'ko'
+    base = 'privacy' if name == 'index.html' else name.rsplit('-', 1)[0]
+    cur = lambda l: ' aria-current="true"' if l == lang else ''
+    head = src[:src.index('<style>')] + '<link rel="icon" href="https://poopiemate.com/favicon.ico" sizes="48x48">\n  <meta name="theme-color" content="#18955A">\n  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">\n  <style>' + CSS + '  </style>\n</head>\n'
+    m = re.search(r'<div class="container">(.*)</div>\s*(<script>.*?</script>)?\s*</body>', src, re.S)
+    body, script = m.group(1), m.group(2) or ''
+    body = re.sub(r'\s*<footer>.*?</footer>', '', body, flags=re.S)
+    labels = PAIR if lang == 'ko' else PAIR_EN
+    links = ''.join(f'<a href="./{k}-{lang}">{v}</a>' for k, v in labels.items())
+    bar = (f'<div class="bar" role="banner"><div class="bar-in"><a href="{WEB}{"/" if lang == "ko" else "/en/"}"><img src="{WEB}/assets/brand/wordmark-{lang}-green.svg" alt="{"응가메이트" if lang == "ko" else "PoopieMate"}" width="120" height="32"></a>'
+           f'<nav aria-label="{"언어" if lang == "ko" else "Language"}">'
+           f'<a href="./{base}-ko" lang="ko" hreflang="ko"{cur("ko")}>KO</a><a href="./{base}-en" lang="en" hreflang="en"{cur("en")}>EN</a>'
+           f'<a class="home" href="{WEB}{"/" if lang == "ko" else "/en/"}">{"홈페이지" if lang == "ko" else "Website"}</a></nav></div></div>')
+    sns = [('YouTube', 'https://www.youtube.com/@poopiemate'), ('TikTok', 'https://www.tiktok.com/@poopiemate'),
+           ('Instagram', 'https://www.instagram.com/poopiemate_kr' if lang == 'ko' else 'https://www.instagram.com/poopiemate'),
+           ('LinkedIn', 'https://www.linkedin.com/company/poopiemate')]
+    sns_nav = ''.join(f'<a href="{h}" rel="noopener">{n}</a>' for n, h in sns)
+    foot = (f'<footer class="foot"><div class="foot-in"><nav>{links}</nav><nav aria-label="SNS">{sns_nav}</nav>'
+            f'<span>© 2026 {"픽셀베리 · 응가메이트" if lang == "ko" else "Pixelberry · PoopieMate"} · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></span></div></footer>')
+    out = head + '<body>\n' + bar + '\n<main class="container">' + body + '</main>\n' + foot + '\n' + script + '\n</body>\n</html>\n'
+    (ROOT / name).write_text(out, encoding='utf-8')
 
-    <section>
-      <h2>개인정보 처리방침</h2>
-      <div class="highlight">
-        <p><a href="./index.html">개인정보 처리방침 보기 →</a></p>
-      </div>
-    </section>
-  </main>
-<footer class="foot"><div class="foot-in"><nav><a href="./privacy-ko">개인정보 처리방침</a><a href="./terms-ko">이용약관</a><a href="./support-ko">고객 지원</a><a href="./licenses-ko">오픈소스 라이선스</a></nav><nav aria-label="SNS"><a href="https://www.youtube.com/@poopiemate" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@poopiemate" rel="noopener">TikTok</a><a href="https://www.instagram.com/poopiemate_kr" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/poopiemate" rel="noopener">LinkedIn</a></nav><span>© 2026 픽셀베리 · 응가메이트 · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></span></div></footer>
 
-</body>
-</html>
+if __name__ == '__main__':
+    for f in sorted((ROOT / 'src/pages').glob('*.html')):
+        build(f.name)
+        print(f.name)
