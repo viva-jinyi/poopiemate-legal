@@ -1,6 +1,6 @@
-# PoopieMate — policy pages (legacy address)
+# POOPIEMATE — policy pages (legacy address)
 
-This repository serves PoopieMate’s privacy policy, terms of service, support page and open-source licenses
+This repository serves POOPIEMATE’s privacy policy, terms of service, support page and open-source licenses
 at the address that app versions up to 2.0.0 open:
 
 | Page | Korean | English |
@@ -31,4 +31,4 @@ git add -A && git commit -m "Rebuild policy pages from the latest website" && gi
 
 ---
 
-<sub>© 2026 Pixelberry · PoopieMate · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></sub>
+<sub>© 2026 Pixelberry · POOPIEMATE · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></sub>
