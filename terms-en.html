@@ -1,143 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — PoopieMate</title>
-  <link rel="icon" href="https://poopiemate.com/favicon.ico" sizes="48x48">
-  <meta name="theme-color" content="#18955A">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <style>
-@font-face{font-family:"NanumSquareNeo";src:url("https://poopiemate.com/assets/fonts/NanumSquareNeo-cBd.woff2") format("woff2");font-weight:700 900;font-display:swap}
-:root{--brand:#18955A;--brand-deep:#0E7041;--brand-subtle:#E5F8F0;--on-color:#FFFFFF;--fg:#191F28;--fg-2:#4E5968;--fg-3:#6B7684;--fg-4:#8B95A1;--line:#E5E8EB;--surface:#F2F4F6;--surface-soft:#F9FAFB}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:#FFFFFF;color:var(--fg);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;line-height:1.75;word-break:keep-all;overflow-wrap:break-word;-webkit-font-smoothing:antialiased}
-a{color:var(--brand-deep)}
-:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:6px}
-.bar{position:sticky;top:0;z-index:5;height:64px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);color:var(--fg)}
-.bar-in{max-width:1120px;height:100%;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.bar img{height:24px;width:auto;display:block}
-.bar nav{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:700}
-.bar nav a{color:var(--fg-3);text-decoration:none}
-.bar nav a[aria-current="true"]{color:var(--fg)}
-.bar .home{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;background:var(--fg);color:var(--on-color)}
-.container{max-width:760px;margin:0 auto;padding:clamp(40px,6vw,72px) 20px 40px}
-header{margin-bottom:36px;padding-bottom:28px;border-bottom:1px solid var(--line)}
-.app-name{font-size:15px;font-weight:700;color:#127F4A}
-.lang-switch{display:none}
-h1,h2,h3,.contact-card .value{font-family:"NanumSquareNeo","Pretendard Variable",Pretendard,sans-serif}
-h1{margin:10px 0 0;font-size:clamp(26px,3.4vw,36px);line-height:1.32;font-weight:700;letter-spacing:-.025em}
-.date,.subtitle{margin:12px 0 0;font-size:15px;color:var(--fg-3)}
-section{margin-bottom:36px}
-h2{margin:0 0 12px;font-size:clamp(18px,1.8vw,20px);line-height:1.45;font-weight:700;letter-spacing:-.015em}
-h3{margin:0 0 4px;font-size:16px;font-weight:700}
-p{margin:0 0 10px;font-size:16px;color:var(--fg-2)}
-ul,ol{margin:0 0 10px;padding-left:20px}
-li{margin:6px 0;font-size:16px;color:var(--fg-2)}
-strong{color:var(--fg)}
-.highlight{padding:16px 20px;border-radius:16px;background:var(--brand-subtle)}
-.highlight p{margin:0}
-.contact-card{margin:0 0 12px;padding:18px 20px;border-radius:16px;background:var(--surface-soft)}
-.contact-card .label{font-size:13px;font-weight:700;color:var(--fg-2)}
-.contact-card .value{margin-top:4px;font-size:17px;font-weight:700}
-.item{margin-bottom:20px}
-.item p{margin-bottom:2px;font-size:15px}
-.meta{color:var(--fg-3)}
-.table-wrap{overflow-x:auto}
-table{width:100%;border-collapse:collapse;font-size:14px}
-th,td{text-align:left;padding:10px 12px 10px 0;border-bottom:1px solid var(--line);vertical-align:top;color:var(--fg-2)}
-th{font-weight:700;color:var(--fg);white-space:nowrap}
-td:nth-child(2){white-space:nowrap}
-td:first-child{word-break:break-all}
-details{margin-bottom:12px;border-radius:14px;background:var(--surface-soft)}
-summary{cursor:pointer;padding:14px 18px;font-size:15px;font-weight:700}
-.used-by{padding:0 18px;font-size:13px;color:var(--fg-3)}
-pre{margin:0;padding:12px 18px 18px;font-size:12px;line-height:1.6;white-space:pre-wrap;word-break:break-word;color:var(--fg-2)}
-.feather{background:none;margin:2px 0 0}
-.feather summary{padding:0;font-size:13px;font-weight:400;color:var(--fg-3)}
-.feather p{font-size:13px;color:var(--fg-3);margin:4px 0 0}
-@media (max-width:600px){thead{display:none}table,tbody,tr,td{display:block;width:100%}tr{padding:10px 0;border-bottom:1px solid var(--line)}td{border:0;padding:0}td:nth-child(2){display:inline;font-size:12px}td:nth-child(3){font-size:12px;color:var(--fg-3)}td:first-child a{display:inline-block;padding:4px 0;min-height:24px}}
-.foot{margin-top:24px;padding:40px 20px 48px;background:var(--surface-soft);font-size:13px;color:var(--fg-2)}
-.foot-in{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:space-between}
-.foot a{color:var(--fg-2);text-decoration:none}
-.foot nav{display:flex;flex-wrap:wrap;gap:8px 18px}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Service — PoopieMate</title>
+<link rel="canonical" href="https://poopiemate.com/en/terms/">
+<meta name="robots" content="noindex, follow">
+<meta http-equiv="refresh" content="0; url=https://poopiemate.com/en/terms/">
+<script>location.replace('https://poopiemate.com/en/terms/' + location.hash);</script>
 </head>
 <body>
-<div class="bar" role="banner"><div class="bar-in"><a href="https://poopiemate.com/en/"><img src="https://poopiemate.com/assets/brand/wordmark-en-green.svg" alt="PoopieMate" width="120" height="32"></a><nav aria-label="Language"><a href="./terms-ko" lang="ko" hreflang="ko">KO</a><a href="./terms-en" lang="en" hreflang="en" aria-current="true">EN</a><a class="home" href="https://poopiemate.com/en/">Website</a></nav></div></div>
-<main class="container">
-    <header>
-      <div class="app-name">PoopieMate (응가메이트)</div>
-      <h1>Terms of Service</h1>
-      <div class="date">Effective Date: October 7, 2026</div>
-    </header>
-
-    <section>
-      <p>These Terms of Service govern your use of the PoopieMate service ("Service") provided by Pixelberry ("Company"). By using the Service, you agree to these terms.</p>
-    </section>
-
-    <section>
-      <h2>1. What We Offer</h2>
-      <p>PoopieMate helps dog owners share potty and walk records in real time with family caregivers, and provides walk timing guidance based on weather and potty gauge data.</p>
-      <ul>
-        <li>Potty (poop &amp; pee) and walk logging</li>
-        <li>Family caregiver invitations and real-time record sharing</li>
-        <li>Weather-based walk safety guidance</li>
-        <li>Potty gauge and personalized push notifications</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>2. Accounts</h2>
-      <p>You must sign in with a Google or Apple account to use the Service. You are responsible for keeping your account credentials secure.</p>
-    </section>
-
-    <section>
-      <h2>3. Your Responsibilities</h2>
-      <ul>
-        <li>You are responsible for the accuracy of the potty records, walk times, and other information you enter.</li>
-        <li>Walk safety guidance is for reference only. Actual decisions about walking your dog and your dog's health are your responsibility.</li>
-        <li>You must not use the Service in ways that violate others' rights or for unlawful purposes.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>4. Prohibited Content &amp; Reporting</h2>
-      <p>You must not use PoopieMate to share content that is illegal or harmful, including child sexual abuse material, terrorist content, threats, harassment, hate, fraud, content encouraging self-harm, or animal cruelty. Content you add (dog photos, nicknames, record notes) is visible only to family members in your group.</p>
-      <p>To report content or a user, or to complain about how we handled a report, email <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a> with a description and, if possible, a screenshot. We review reports within 7 days and remove illegal content as soon as we become aware of it. We may remove content or suspend accounts that break these terms, and we will tell you why. You can appeal a decision by replying to our email.</p>
-      <p>Group owners can remove members at any time in Family settings.</p>
-    </section>
-
-    <section>
-      <h2>5. Service Changes &amp; Interruptions</h2>
-      <p>We may update, add, or remove features to improve the Service. We will notify you of significant changes via in-app notice or email. In the event of unavoidable service interruptions, we will provide advance notice whenever possible.</p>
-    </section>
-
-    <section>
-      <h2>6. Disclaimer</h2>
-      <p>The Company is not liable for service disruptions caused by weather API failures, network errors, or device issues outside our control. Walk safety information provided by the Service is for reference only and does not constitute veterinary or medical advice.</p>
-    </section>
-
-    <section>
-      <h2>7. Privacy</h2>
-      <p>Your personal information is handled in accordance with our <a href="https://viva-jinyi.github.io/poopiemate-legal/privacy-en">Privacy Policy</a>.</p>
-    </section>
-
-    <section>
-      <h2>8. Changes to These Terms</h2>
-      <p>If these terms are updated, we will notify you via in-app notice or on this page. Continued use of the Service after changes take effect constitutes your acceptance of the updated terms.</p>
-    </section>
-
-    <section>
-      <h2>9. Contact</h2>
-      <ul>
-        <li><strong>Company</strong>: Pixelberry</li>
-        <li><strong>Email</strong>: <a href="mailto:jin@pixelberry.io">jin@pixelberry.io</a></li>
-      </ul>
-    </section>
-  </main>
-<footer class="foot"><div class="foot-in"><nav><a href="./privacy-en">Privacy Policy</a><a href="./terms-en">Terms of Service</a><a href="./support-en">Support</a><a href="./licenses-en">Open-source licenses</a></nav><nav aria-label="SNS"><a href="https://www.youtube.com/@poopiemate" rel="noopener">YouTube</a><a href="https://www.tiktok.com/@poopiemate" rel="noopener">TikTok</a><a href="https://www.instagram.com/poopiemate" rel="noopener">Instagram</a><a href="https://www.linkedin.com/company/poopiemate" rel="noopener">LinkedIn</a></nav><span>© 2026 Pixelberry · PoopieMate · <a href="mailto:poopiemate@pixelberry.io">poopiemate@pixelberry.io</a></span></div></footer>
-
+<main><p>This page has moved. <a href="https://poopiemate.com/en/terms/">https://poopiemate.com/en/terms/</a></p></main>
 </body>
 </html>
